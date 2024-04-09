@@ -34,4 +34,9 @@ class VotoController extends Controller
     {
         return  $this->model->addVoto($array_asoc);
     }
+
+    function getVotos()
+    {
+        return $this->model->recuperarVotos();
+    }
 }
