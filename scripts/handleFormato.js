@@ -59,6 +59,7 @@ $(document).ready(function () {
       rutFormateado =
         rutFormateado.slice(0, -1) + "-" + rutFormateado.slice(-1);
       $("#rut").val(rutFormateado);
+      $("#rut").trigger("validated");
     } else {
       alert("RUT no es válido.");
       $("#rut").val("");
@@ -66,7 +67,11 @@ $(document).ready(function () {
   }
 
   const campoRut = $("#rut");
-  campoRut.on("blur", () => validarRut(campoRut.val()));
+  campoRut.on("blur", function () {
+    if ($(this).val().trim() !== "") {
+      validarRut($(this).val());
+    }
+  });
 
   // === EXISTENCIA DE VOTO ASOCIADO AL RUT
 });
