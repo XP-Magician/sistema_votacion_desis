@@ -53,6 +53,7 @@
         type: "GET",
         url: "http://localhost/sistema_votacion_desis/requests/voto.php",
         success: recuperarVotos,
+        data: { full: 1 },
         error: function (err) {
           alert("Ocurrio un error");
         },
