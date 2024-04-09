@@ -36,6 +36,19 @@ class Model
         }
     }
 
+    function getRegistrosOrden($tipo)
+    {
+        try {
+            $tipo = $tipo == 1 ? 'ASC' : 'DESC';
+            $query = $this->conexion->prepare('SELECT * FROM ' . $this->tabla . ' ORDER BY ' . $this->campo_pk . ' ASC');
+            $query->execute();
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        } catch (PDOException $e) {
+            die($e->getMessage());
+        }
+    }
+
     function getRegistro($valor_pk)
     {
         try {
