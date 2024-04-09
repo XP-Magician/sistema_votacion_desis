@@ -272,6 +272,18 @@ else if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
 ```
 
+#### 📁 /resources
+
+En este directorio se encuentra el script necesario para crear el modelo de datos, y una vista alternativa y opcional a la solicitada, que permite visualizar
+los datos que se ingresaron en las votaciones.
+
++/resources
+
+    +📌script.sql: El fichero SQL que contiene el modelo de la base de datos para ser levantada en el sistema.
+
+    +📌index.html: Vista alternativa para revisar los registros ingresados, puedes acceder desde http://localhost/sistema_votacion_desis/resources.
+    (si cambiaste el nombre del directorio tambien debes cambiarlo al acceder en la URL que se menciona).
+
 #### 📁 /scripts
 
 En este directorio se encuentran los scripts encargados de pintar los datos y comunicarse con los ficheros del directorio "/requests", esto debido
