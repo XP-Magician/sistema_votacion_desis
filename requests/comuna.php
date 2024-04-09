@@ -4,6 +4,6 @@ if (isset($id_region)) {
     require_once dirname(__DIR__) . '/config.php';
     require_once(CONTROLLERS_COMUNA);
     $comunaController = new ComunaController();
-    $resultado = $comunaController->getRegistro($id_region);
+    $resultado = $comunaController->getRegistrosMultiples($id_region);
     echo json_encode($resultado);
 }
