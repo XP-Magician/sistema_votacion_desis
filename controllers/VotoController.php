@@ -29,4 +29,9 @@ class VotoController extends Controller
         $this->model->setCampoBusqueda('alias');
         return $this->model->getRegistro($alias);
     }
+
+    function addVoto($array_asoc)
+    {
+        return  $this->model->addVoto($array_asoc);
+    }
 }
