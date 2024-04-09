@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visualizacion de votos - Desis</title>
+  </head>
+  <body>
+    <!-- OPCIONAL , PARA VER LOS DATOS (SOLO ES UN DEMO, POR LO QUE LA ESTRUCTURA ESTA ACOPLADA)-->
+    <table id="tablaVotos" style="width: 100%; border-collapse: collapse">
+      <thead>
+        <tr>
+          <th>Rut Votante</th>
+          <th>Nombre</th>
+          <th>Alias</th>
+          <th>Correo</th>
+          <th>Ciudad</th>
+          <th>Comuna</th>
+          <th>Candidato</th>
+          <th>Medio de conocimiento</th>
+          <th>Fecha</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Las filas de la tabla se generarán aquí usando jQuery -->
+      </tbody>
+    </table>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      const tabla = $("#tablaVotos tbody");
+      function recuperarVotos(data) {
+        const dataArray = JSON.parse(data);
+        $.each(dataArray, function (index, item) {
+          let fila = $("<tr style='border: 1px solid black; padding: 8px;'> ");
+          fila.append($("<td>").text(item.rut_voto));
+          fila.append($("<td>").text(item.nombre_votante));
+          fila.append($("<td>").text(item.alias));
+          fila.append($("<td>").text(item.correo));
+          fila.append($("<td>").text(item.nombre_region));
+          fila.append($("<td>").text(item.nombre_comuna));
+          fila.append($("<td>").text(item.nombre_candidato));
+          fila.append($("<td>").text(item.nombre_medio));
+          fila.append($("<td>").text(item.fecha_voto));
+          tabla.append(fila);
+        });
+      }
+      $.ajax({
+        type: "GET",
+        url: "http://localhost/sistema_votacion_desis/requests/voto.php",
+        success: recuperarVotos,
+        error: function (err) {
+          alert("Ocurrio un error");
+        },
+      });
+    </script>
+  </body>
+</html>
