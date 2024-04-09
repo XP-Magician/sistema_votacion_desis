@@ -15,3 +15,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $resultado = $controller_voto->addVoto($voto_info);
     echo json_encode(["resultado" => $resultado]);
 }
+
+//GET
+else if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    $controller_voto = new VotoController();
+    $resultado;
+    if (isset($_GET["alias"])) $resultado = $controller_voto->getByAlias($_GET["alias"]);
+    elseif (isset($_GET["rut"])) $resultado = $controller_voto->getByRut($_GET["rut"]);
+    elseif (isset($_GET["correo"])) $resultado = $controller_voto->getByCorreo($_GET["correo"]);
+    echo json_encode($resultado);
+}
