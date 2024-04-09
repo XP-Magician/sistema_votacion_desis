@@ -36,6 +36,19 @@ class Model
         }
     }
 
+    function getRegistrosMultiples($valor_pk)
+    {
+        try {
+            $query =  $this->conexion->prepare('SELECT * FROM ' . $this->tabla . ' WHERE ' . $this->campo_pk . ' = :pk');
+            $query->bindValue('pk', $valor_pk);
+            $query->execute();
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        } catch (PDOException $e) {
+            die($e->getMessage());
+        }
+    }
+
     function getRegistrosOrden($tipo)
     {
         try {
