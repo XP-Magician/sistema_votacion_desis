@@ -4,6 +4,9 @@ El repositorio contiene el ejercicio de diagnóstico como prueba técnica solici
 de votaciones, con validaciones asociadas y modelos de bases de datos incluidos. El proyecto incluye recursos asociados tales como
 el script SQL para generar la base de datos y las directrices generales del proyecto indicadas en este README.
 
+🚧🚧 MUY IMPORTANTE : Para testear los RUTS ingresados DEBES ingresar un rut válido y real, ya que el sistema es capaz de detectar
+RUTS falsos, te recomiendo esta página para sacar RUTS validos y testear: `<RUTS Validos >` : <https://validarutchile.cl/generador-rut-validos.php>
+
 ## 🖥️ Tecnologías utilizadas
 
 Las tecnologías utilizadas en este proyecto fueron:
