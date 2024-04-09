@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="./public/base.css" />
   </head>
   <body>
+    <!-- JQUERY -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <main class="formulario_container">
       <br />
       <h2 class="titulo_formulario">FORMULARIO DE VOTACIÓN:</h2>
@@ -61,9 +68,12 @@
         <!-- Región -->
         <section class="formulario_input">
           <label class="formulario_label" for="region">Región</label>
-          <select required name="region" id="region" class="formulario_campo">
-            <option value="a">Example</option>
-          </select>
+          <select
+            required
+            name="region"
+            id="region"
+            class="formulario_campo"
+          ></select>
         </section>
         <!-- Comuna -->
         <section class="formulario_input">
@@ -119,5 +129,6 @@
       </form>
       <br />
     </main>
+    <script src="./scripts/handleData.js"></script>
   </body>
 </html>
