@@ -85,7 +85,6 @@ $(document).ready(function () {
         url: "http://localhost/sistema_votacion_desis/requests/voto.php",
         success: function (data) {
           const data_parsed = JSON.parse(data);
-          console.log(data_parsed);
           if (data_parsed.resultado === true) {
             alert("Voto ingresado con éxito.");
             window.location.reload();
