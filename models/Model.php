@@ -69,7 +69,7 @@ class Model
             $query->bindValue('pk', $valor_pk);
             $query->execute();
             $result = $query->fetch(PDO::FETCH_ASSOC);
-            return $result;
+            return $result == false ? [] : $result;
         } catch (PDOException $e) {
             die($e->getMessage());
         }

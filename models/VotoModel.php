@@ -31,9 +31,9 @@ class VotoModel extends Model
             $query->bindValue(":idca", $array_asoc["id_candidato"]);
             $query->bindValue(":idm", $array_asoc["id_medio_informacion"]);
             $query->execute();
-            return true;
+            return ["resultado" => true];
         } catch (PDOException $e) {
-            return false;
+            return ["resultado" => false];
         }
     }
 
