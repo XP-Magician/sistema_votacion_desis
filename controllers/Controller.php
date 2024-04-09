@@ -15,6 +15,11 @@ class Controller
         return $this->model->getRegistros();
     }
 
+    function getRegistrosOrden($tipo)
+    {
+        return $this->model->getRegistros($tipo);
+    }
+
     function getRegistro($valorClave)
     {
         return $this->model->getRegistro($valorClave);
