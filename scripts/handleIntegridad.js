@@ -14,6 +14,62 @@ $(document).ready(function () {
     return isSelected;
   }
 
+  // CHECK DE ALIAS
+  const alias = $("#alias");
+  alias.on("blur", function () {
+    const valorAlias = $(this).val().trim();
+    if (valorAlias != "") {
+      $.ajax({
+        type: "GET",
+        data: { alias: valorAlias },
+        url: "http://localhost/sistema_votacion_desis/requests/voto.php",
+        success: function (data) {
+          if (data != false) {
+            alert("El alias ya esta en uso.");
+            alias.val("");
+          }
+        },
+      });
+    }
+  });
+
+  // CHECK DE CORREO
+  const correo = $("#correo");
+  correo.on("blur", function () {
+    const valorCorreo = $(this).val().trim();
+    if (valorCorreo != "") {
+      $.ajax({
+        type: "GET",
+        data: { correo: valorCorreo },
+        url: "http://localhost/sistema_votacion_desis/requests/voto.php",
+        success: function (data) {
+          if (data != false) {
+            alert("Ya existe un voto con este correo.");
+            correo.val("");
+          }
+        },
+      });
+    }
+  });
+
+  //Check de rut asociado
+  const rut = $("#rut");
+  rut.on("validated", function () {
+    const rut_value = $(this).val();
+    $.ajax({
+      type: "GET",
+      data: { rut: rut_value },
+      url: "http://localhost/sistema_votacion_desis/requests/voto.php",
+      success: function (data) {
+        if (data != false) {
+          data_parsed = JSON.parse(data);
+          alert("Usted ya votó el día: " + data_parsed.fecha_voto);
+          window.location.reload();
+        }
+      },
+    });
+  });
+
   // ENVIO DEL FORM
   form.submit(function (ev) {
     ev.preventDefault();
