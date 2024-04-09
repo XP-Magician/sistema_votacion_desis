@@ -18,7 +18,7 @@
       <br />
       <h2 class="titulo_formulario">FORMULARIO DE VOTACIÓN:</h2>
       <br />
-      <form class="formulario_control">
+      <form class="formulario_control" id="formulario" name="formulario">
         <!-- Nombres-->
         <section class="formulario_input">
           <label class="formulario_label" for="campo_nombre"
@@ -58,7 +58,7 @@
         <section class="formulario_input">
           <label class="formulario_label" for="correo">Email</label>
           <input
-            type="text"
+            type="email"
             required
             name="correo"
             id="correo"
@@ -109,5 +109,6 @@
     </main>
     <script src="./scripts/handleData.js"></script>
     <script src="./scripts/handleFormato.js"></script>
+    <script src="./scripts/handleIntegridad.js"></script>
   </body>
 </html>
