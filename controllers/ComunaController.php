@@ -11,4 +11,9 @@ class ComunaController extends Controller
         $model = new ComunaModel();
         parent::__construct($model);
     }
+
+    function getRegistrosMultiples($id)
+    {
+        return $this->model->getRegistrosMultiples($id);
+    }
 }
