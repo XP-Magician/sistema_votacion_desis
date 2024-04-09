@@ -17,10 +17,11 @@ define('MODELS_BASE', MODELS . DIRECTORY_SEPARATOR . 'Model.php');
 define('MODELS_REGION', MODELS . DIRECTORY_SEPARATOR . 'RegionModel.php');
 define('MODELS_COMUNA', MODELS . DIRECTORY_SEPARATOR . 'ComunaModel.php');
 define('MODELS_CANDIDATO', MODELS . DIRECTORY_SEPARATOR . 'CandidatoModel.php');
-
+define('MODELS_MEDIOS', MODELS . DIRECTORY_SEPARATOR . 'MediosModel.php');
 
 // Rutas de controllers
 define('CONTROLLERS_BASE', CONTROLLERS . DIRECTORY_SEPARATOR . 'Controller.php');
 define('CONTROLLERS_REGION', CONTROLLERS . DIRECTORY_SEPARATOR . 'RegionController.php');
 define('CONTROLLERS_COMUNA', CONTROLLERS . DIRECTORY_SEPARATOR . 'ComunaController.php');
 define('CONTROLLERS_CANDIDATO', CONTROLLERS . DIRECTORY_SEPARATOR . 'CandidatoController.php');
+define('CONTROLLERS_MEDIOS', CONTROLLERS . DIRECTORY_SEPARATOR . 'MediosController.php');
