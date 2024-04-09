@@ -94,6 +94,7 @@ $(document).ready(function () {
         })
       );
     });
+    medios.trigger("loaded");
   }
 
   $.ajax({
