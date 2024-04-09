@@ -7,104 +7,117 @@
     <link rel="stylesheet" href="./public/base.css" />
   </head>
   <body>
-    <br />
-    <h2 class="titulo_formulario">FORMULARIO DE VOTACIÓN:</h2>
-    <br />
-    <form class="formulario_control">
-      <!-- Nombres-->
-      <section class="formulario_input">
-        <label class="formulario_label" for="campo_nombre"
-          >Nombre y Apellido</label
-        >
-        <input
-          type="text"
-          required
-          name="campo_nombre"
-          id="campo_nombre"
-          class="formulario_campo"
-        />
-      </section>
-      <!-- Alias-->
-      <section class="formulario_input">
-        <label class="formulario_label" for="alias">Alias</label>
-        <input
-          type="text"
-          required
-          name="alias"
-          id="alias"
-          class="formulario_campo"
-        />
-      </section>
-      <!-- RUT-->
-      <section class="formulario_input">
-        <label class="formulario_label" for="rut">RUT</label>
-        <input
-          type="text"
-          required
-          name="rut"
-          id="rut"
-          class="formulario_campo"
-        />
-      </section>
-      <!-- Email-->
-      <section class="formulario_input">
-        <label class="formulario_label" for="correo">Email</label>
-        <input
-          type="text"
-          required
-          name="correo"
-          id="correo"
-          class="formulario_campo"
-        />
-      </section>
-      <!-- Región -->
-      <section class="formulario_input">
-        <label class="formulario_label" for="region">Región</label>
-        <select required name="region" id="region" class="formulario_campo">
-          <option value="a">Example</option>
-        </select>
-      </section>
-      <!-- Comuna -->
-      <section class="formulario_input">
-        <label class="formulario_label" for="comuna">Comuna</label>
-        <select required name="comuna" id="comuna" class="formulario_campo">
-          <option value="a">Example</option>
-        </select>
-      </section>
-      <!-- Candidato-->
-      <section class="formulario_input">
-        <label for="candidato" class="formulario_label">Candidato</label>
-        <select name="candidato" id="candidato" class="formulario_campo">
-          <option value="a">Example</option>
-        </select>
-      </section>
-      <!-- Nosotros-->
-      <section class="formulario_input">
-        <label for="campo_nombre" class="formulario_label"
-          >Como se enteró de Nosotros</label
-        >
-        <!-- Selecciones agrupadas -->
-        <span class="formulario_input-medios">
-          <!-- Web-->
-          <input type="checkbox" id="medio_web" name="medio_web" value="web" />
-          <label for="medio_web"> Web</label>
-          <!-- TV-->
-          <input type="checkbox" id="medio_tv" name="medio_tv" value="tv" />
-          <label for="medio_tv"> TV</label>
-          <!-- RSS -->
-          <input type="checkbox" id="medio_rss" name="medio_rss" value="rss" />
-          <label for="medio_rss"> Redes sociales</label>
-          <!-- Amigo -->
+    <main class="formulario_container">
+      <br />
+      <h2 class="titulo_formulario">FORMULARIO DE VOTACIÓN:</h2>
+      <br />
+      <form class="formulario_control">
+        <!-- Nombres-->
+        <section class="formulario_input">
+          <label class="formulario_label" for="campo_nombre"
+            >Nombre y Apellido</label
+          >
           <input
-            type="checkbox"
-            id="medio_amigo"
-            name="medio_amigo"
-            value="amigo"
+            type="text"
+            required
+            name="campo_nombre"
+            id="campo_nombre"
+            class="formulario_campo"
           />
-          <label for="medio_amigo"> Amigo</label>
-        </span>
-      </section>
-      <button class="formulario_send">Votar</button>
-    </form>
+        </section>
+        <!-- Alias-->
+        <section class="formulario_input">
+          <label class="formulario_label" for="alias">Alias</label>
+          <input
+            type="text"
+            required
+            name="alias"
+            id="alias"
+            class="formulario_campo"
+          />
+        </section>
+        <!-- RUT-->
+        <section class="formulario_input">
+          <label class="formulario_label" for="rut">RUT</label>
+          <input
+            type="text"
+            required
+            name="rut"
+            id="rut"
+            class="formulario_campo"
+          />
+        </section>
+        <!-- Email-->
+        <section class="formulario_input">
+          <label class="formulario_label" for="correo">Email</label>
+          <input
+            type="text"
+            required
+            name="correo"
+            id="correo"
+            class="formulario_campo"
+          />
+        </section>
+        <!-- Región -->
+        <section class="formulario_input">
+          <label class="formulario_label" for="region">Región</label>
+          <select required name="region" id="region" class="formulario_campo">
+            <option value="a">Example</option>
+          </select>
+        </section>
+        <!-- Comuna -->
+        <section class="formulario_input">
+          <label class="formulario_label" for="comuna">Comuna</label>
+          <select required name="comuna" id="comuna" class="formulario_campo">
+            <option value="a">Example</option>
+          </select>
+        </section>
+        <!-- Candidato-->
+        <section class="formulario_input">
+          <label for="candidato" class="formulario_label">Candidato</label>
+          <select name="candidato" id="candidato" class="formulario_campo">
+            <option value="a">Example</option>
+          </select>
+        </section>
+        <!-- Nosotros-->
+        <section class="formulario_input">
+          <label for="campo_nombre" class="formulario_label"
+            >Como se enteró de Nosotros</label
+          >
+          <!-- Selecciones agrupadas -->
+          <span class="formulario_input-medios">
+            <!-- Web-->
+            <input
+              type="checkbox"
+              id="medio_web"
+              name="medio_web"
+              value="web"
+            />
+            <label for="medio_web"> Web</label>
+            <!-- TV-->
+            <input type="checkbox" id="medio_tv" name="medio_tv" value="tv" />
+            <label for="medio_tv"> TV</label>
+            <!-- RSS -->
+            <input
+              type="checkbox"
+              id="medio_rss"
+              name="medio_rss"
+              value="rss"
+            />
+            <label for="medio_rss"> Redes sociales</label>
+            <!-- Amigo -->
+            <input
+              type="checkbox"
+              id="medio_amigo"
+              name="medio_amigo"
+              value="amigo"
+            />
+            <label for="medio_amigo"> Amigo</label>
+          </span>
+        </section>
+        <button class="formulario_send">Votar</button>
+      </form>
+      <br />
+    </main>
   </body>
 </html>
