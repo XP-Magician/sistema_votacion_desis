@@ -24,8 +24,9 @@ $(document).ready(function () {
         data: { alias: valorAlias },
         url: "http://localhost/sistema_votacion_desis/requests/voto.php",
         success: function (data) {
-          if (data != false) {
-            alert("El alias ya esta en uso.");
+          const data_parsed = JSON.parse(data);
+          if (Object.keys(data_parsed).length > 0) {
+            alert("El alias ya esta en uso");
             alias.val("");
           }
         },
@@ -43,7 +44,8 @@ $(document).ready(function () {
         data: { correo: valorCorreo },
         url: "http://localhost/sistema_votacion_desis/requests/voto.php",
         success: function (data) {
-          if (data != false) {
+          const data_parsed = JSON.parse(data);
+          if (Object.keys(data_parsed).length > 0) {
             alert("Ya existe un voto con este correo.");
             correo.val("");
           }
@@ -61,8 +63,8 @@ $(document).ready(function () {
       data: { rut: rut_value },
       url: "http://localhost/sistema_votacion_desis/requests/voto.php",
       success: function (data) {
-        if (data != false) {
-          data_parsed = JSON.parse(data);
+        const data_parsed = JSON.parse(data);
+        if (Object.keys(data_parsed).length > 0) {
           alert("Usted ya votó el día: " + data_parsed.fecha_voto);
           window.location.reload();
         }
@@ -82,7 +84,9 @@ $(document).ready(function () {
         data: data_form,
         url: "http://localhost/sistema_votacion_desis/requests/voto.php",
         success: function (data) {
-          if (data == true) {
+          const data_parsed = JSON.parse(data);
+          console.log(data_parsed);
+          if (data_parsed.resultado === true) {
             alert("Voto ingresado con éxito.");
             window.location.reload();
           } else {
