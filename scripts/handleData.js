@@ -53,4 +53,24 @@ $(document).ready(function () {
   selectRegion.change(recuperarComunas);
 
   // === RECUPERAR CANDIDATOS ===
+  const candidatos = $("#candidato");
+  function recuperarCandidatos(data) {
+    const dataArray = JSON.parse(data);
+    $.each(dataArray, function (index, item) {
+      candidatos.append(
+        $("<option>", {
+          value: item.id_candidato,
+          text: item.nombre_candidato,
+        })
+      );
+    });
+  }
+  $.ajax({
+    type: "GET",
+    url: "http://localhost/sistema_votacion_desis/requests/candidato.php",
+    success: recuperarCandidatos,
+    error: function (err) {
+      alert("Ocurrio un error");
+    },
+  });
 });
