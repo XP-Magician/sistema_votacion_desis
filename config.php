@@ -15,7 +15,10 @@ define('CONTROLLERS', ROOT . DIRECTORY_SEPARATOR . 'controllers');
 // Rutas de models
 define('MODELS_BASE', MODELS . DIRECTORY_SEPARATOR . 'Model.php');
 define('MODELS_REGION', MODELS . DIRECTORY_SEPARATOR . 'RegionModel.php');
+define('MODELS_COMUNA', MODELS . DIRECTORY_SEPARATOR . 'ComunaModel.php');
+
 
 // Rutas de controllers
 define('CONTROLLERS_BASE', CONTROLLERS . DIRECTORY_SEPARATOR . 'Controller.php');
 define('CONTROLLERS_REGION', CONTROLLERS . DIRECTORY_SEPARATOR . 'RegionController.php');
+define('CONTROLLERS_COMUNA', CONTROLLERS . DIRECTORY_SEPARATOR . 'ComunaController.php');
