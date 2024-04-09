@@ -84,7 +84,7 @@ $(document).ready(function () {
           type: "checkbox",
           value: item.id_medio,
           id: item.nombre_medio,
-          name: item.nombre_medio,
+          name: "medio_comunicacion[]",
         })
       );
       medios.append(
