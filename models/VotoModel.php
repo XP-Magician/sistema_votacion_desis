@@ -36,4 +36,34 @@ class VotoModel extends Model
             return false;
         }
     }
+
+    function recuperarVotos()
+    {
+        try {
+            $sql =
+                "
+            SELECT 
+                v.rut_voto, 
+                v.nombre_votante, 
+                v.alias, 
+                v.correo,
+                r.nombre_region, 
+                c.nombre_comuna,
+                ca.nombre_candidato,
+                m.nombre_medio,
+                v.fecha_voto FROM voto AS v 
+                JOIN comuna AS c ON v.id_comuna = c.id_comuna 
+                JOIN region AS r ON c.id_region = r.id_region
+                JOIN candidato AS ca ON v.id_candidato = ca.id_candidato
+                JOIN medio_informacion AS m ON v.id_medio_informacion = m.id_medio
+            
+            ";
+            $query =  $this->conexion->prepare($sql);
+            $query->execute();
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        } catch (PDOException $e) {
+            die($e->getMessage());
+        }
+    }
 }
