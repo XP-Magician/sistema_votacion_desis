@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
+.titulo_formulario {
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: -0.025em;
+}
+
+.formulario_control {
+  width: fit-content;
+  border-left: 1.5px solid rgb(155, 153, 153);
+  border-top: 1.5px solid rgb(155, 153, 153);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: stretch;
+  padding: 0.15rem;
+  gap: 0.15rem;
+  padding-bottom: 0.75rem;
+}
+
+.formulario_input {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.formulario_label {
+  width: 25ch;
+}
+
+.formulario_campo {
+  width: 37%;
+}
+
+.formulario_send {
+  align-self: start;
+  margin-top: 1.5rem;
+}
