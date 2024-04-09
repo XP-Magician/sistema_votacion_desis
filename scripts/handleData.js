@@ -73,4 +73,35 @@ $(document).ready(function () {
       alert("Ocurrio un error");
     },
   });
+
+  // === RECUPERAR MEDIOS DE INFORMACION ===
+  const medios = $("#medios");
+  function recuperarMedios(data) {
+    const dataArray = JSON.parse(data);
+    $.each(dataArray, function (index, item) {
+      medios.append(
+        $("<input>", {
+          type: "checkbox",
+          value: item.id_medio,
+          id: item.nombre_medio,
+          name: item.nombre_medio,
+        })
+      );
+      medios.append(
+        $("<label>", {
+          for: item.nombre_medio,
+          text: item.nombre_medio,
+        })
+      );
+    });
+  }
+
+  $.ajax({
+    type: "GET",
+    url: "http://localhost/sistema_votacion_desis/requests/medios.php",
+    success: recuperarMedios,
+    error: function (err) {
+      alert("Ocurrio un error");
+    },
+  });
 });
